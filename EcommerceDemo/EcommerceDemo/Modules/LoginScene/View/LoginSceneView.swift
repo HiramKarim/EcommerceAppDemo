@@ -12,7 +12,31 @@ struct LoginSceneView: View {
     @StateObject var loginData: DefaultLoginVM = DefaultLoginVM()
     
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            
+            Text("Welcome\nback")
+                .font(.custom(FontManager.RalewayRegular, size: 55).bold())
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(height: getRect().height / 3.5)
+                .padding()
+                .background(
+                    
+                    ZStack {
+                        
+                        LinearGradient(colors: [
+                        
+                            Color("LoginCircle"),
+                            Color("LoginCircle")
+                                .opacity(0.8),
+                            Color("Purple")
+                        ], startPoint: .top, endPoint: .bottom)
+                        
+                    }
+                    
+                )
+            
+        }
     }
 }
 
